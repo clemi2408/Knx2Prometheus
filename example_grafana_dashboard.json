@@ -1,0 +1,622 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "$$hashKey": "object:69",
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 1,
+  "links": [],
+  "panels": [
+    {
+      "cacheTimeout": null,
+      "datasource": null,
+      "description": "Weather station",
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 0,
+        "y": 0
+      },
+      "id": 2,
+      "links": [],
+      "options": {
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "decimals": 2,
+            "mappings": [],
+            "max": 50,
+            "min": -20,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-blue",
+                  "value": null
+                },
+                {
+                  "color": "dark-yellow",
+                  "value": 10
+                },
+                {
+                  "color": "dark-orange",
+                  "value": 20
+                },
+                {
+                  "color": "semi-dark-red",
+                  "value": 30
+                },
+                {
+                  "color": "dark-red",
+                  "value": 40
+                }
+              ]
+            },
+            "title": "",
+            "unit": "celsius"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "orientation": "auto",
+        "showThresholdLabels": true,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "6.7.2",
+      "targets": [
+        {
+          "expr": "knx_state{groupaddress=\"0_0_15\",job=\"knxpushgateway\"}",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "Temperature",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Temperature outdoor",
+      "transparent": true,
+      "type": "gauge"
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": null,
+      "description": "Weather station",
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 7,
+        "y": 0
+      },
+      "id": 6,
+      "links": [],
+      "options": {
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "decimals": 2,
+            "mappings": [],
+            "max": 40,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "super-light-green",
+                  "value": null
+                },
+                {
+                  "color": "light-green",
+                  "value": 1
+                },
+                {
+                  "color": "semi-dark-green",
+                  "value": 3
+                },
+                {
+                  "color": "dark-green",
+                  "value": 5
+                },
+                {
+                  "color": "light-yellow",
+                  "value": 8
+                },
+                {
+                  "color": "semi-dark-yellow",
+                  "value": 10
+                },
+                {
+                  "color": "dark-yellow",
+                  "value": 14
+                },
+                {
+                  "color": "light-orange",
+                  "value": 17
+                },
+                {
+                  "color": "semi-dark-orange",
+                  "value": 20
+                },
+                {
+                  "color": "dark-orange",
+                  "value": 24
+                },
+                {
+                  "color": "light-red",
+                  "value": 28
+                },
+                {
+                  "color": "semi-dark-red",
+                  "value": 32
+                },
+                {
+                  "color": "dark-red",
+                  "value": 40
+                }
+              ]
+            },
+            "title": "",
+            "unit": "velocityms"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "orientation": "auto",
+        "showThresholdLabels": true,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "6.7.2",
+      "targets": [
+        {
+          "expr": "knx_state{groupaddress=\"0_0_14\",job=\"knxpushgateway\"}",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "Windspeed",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Windspeed ",
+      "transparent": true,
+      "type": "gauge"
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": null,
+      "description": "Weather station",
+      "gridPos": {
+        "h": 6,
+        "w": 7,
+        "x": 12,
+        "y": 0
+      },
+      "id": 8,
+      "links": [],
+      "options": {
+        "displayMode": "lcd",
+        "fieldOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-blue",
+                  "value": null
+                },
+                {
+                  "color": "semi-dark-blue",
+                  "value": 500
+                },
+                {
+                  "color": "light-blue",
+                  "value": 1000
+                },
+                {
+                  "color": "super-light-blue",
+                  "value": 25000
+                },
+                {
+                  "color": "super-light-yellow",
+                  "value": 32000
+                },
+                {
+                  "color": "light-yellow",
+                  "value": 50050
+                },
+                {
+                  "color": "semi-dark-yellow",
+                  "value": 50050
+                },
+                {
+                  "color": "dark-yellow",
+                  "value": 100000
+                }
+              ]
+            },
+            "unit": "lux"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "orientation": "horizontal",
+        "showUnfilled": true
+      },
+      "pluginVersion": "6.7.2",
+      "targets": [
+        {
+          "expr": "knx_state{groupaddress=\"0_0_10\",job=\"knxpushgateway\"}",
+          "interval": "",
+          "legendFormat": "Brightness east",
+          "refId": "C"
+        },
+        {
+          "expr": "knx_state{groupaddress=\"0_0_11\",job=\"knxpushgateway\"}",
+          "interval": "",
+          "legendFormat": "Brightness south",
+          "refId": "D"
+        },
+        {
+          "expr": "knx_state{groupaddress=\"0_0_12\",job=\"knxpushgateway\"}",
+          "interval": "",
+          "legendFormat": "Brightness west",
+          "refId": "E"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Brightness outdoor",
+      "type": "bargauge"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "cacheTimeout": null,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "description": "Weather station",
+      "fill": 1,
+      "fillGradient": 5,
+      "gridPos": {
+        "h": 6,
+        "w": 11,
+        "x": 0,
+        "y": 6
+      },
+      "hiddenSeries": false,
+      "id": 5,
+      "legend": {
+        "avg": true,
+        "current": false,
+        "max": true,
+        "min": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [],
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pluginVersion": "6.7.2",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "knx_state{groupaddress=\"0_0_15\",job=\"knxpushgateway\"}",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "Temperature",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Temperature outdoor",
+      "tooltip": {
+        "shared": true,
+        "sort": 1,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:120",
+          "format": "celsius",
+          "label": "Temperature",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:121",
+          "decimals": null,
+          "format": "velocityms",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "cacheTimeout": null,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "description": "Weather station",
+      "fill": 1,
+      "fillGradient": 5,
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 11,
+        "y": 6
+      },
+      "hiddenSeries": false,
+      "id": 4,
+      "legend": {
+        "avg": true,
+        "current": false,
+        "max": true,
+        "min": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [],
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pluginVersion": "6.7.2",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "knx_state{groupaddress=\"0_0_14\",job=\"knxpushgateway\"}",
+          "interval": "",
+          "legendFormat": "Windspeed",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Windspeed outdoor",
+      "tooltip": {
+        "shared": true,
+        "sort": 1,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:120",
+          "format": "velocityms",
+          "label": "Windspeed",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:121",
+          "decimals": null,
+          "format": "velocityms",
+          "label": "Windspeed",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "cacheTimeout": null,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "description": "Weather station",
+      "fill": 1,
+      "fillGradient": 5,
+      "gridPos": {
+        "h": 6,
+        "w": 23,
+        "x": 0,
+        "y": 12
+      },
+      "hiddenSeries": false,
+      "id": 3,
+      "legend": {
+        "avg": true,
+        "current": false,
+        "max": true,
+        "min": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [],
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pluginVersion": "6.7.2",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "knx_state{groupaddress=\"0_0_10\",job=\"knxpushgateway\"}",
+          "interval": "",
+          "legendFormat": "Brightness east",
+          "refId": "C"
+        },
+        {
+          "expr": "knx_state{groupaddress=\"0_0_11\",job=\"knxpushgateway\"}",
+          "interval": "",
+          "legendFormat": "Brightness south",
+          "refId": "D"
+        },
+        {
+          "expr": "knx_state{groupaddress=\"0_0_12\",job=\"knxpushgateway\"}",
+          "interval": "",
+          "legendFormat": "Brightness west",
+          "refId": "E"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Brightness outdoor",
+      "tooltip": {
+        "shared": true,
+        "sort": 1,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:120",
+          "format": "lux",
+          "label": "Brightness",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:121",
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    }
+  ],
+  "schemaVersion": 22,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ]
+  },
+  "timezone": "",
+  "title": "Outdoor",
+  "uid": "McgWMt3Zz",
+  "variables": {
+    "list": []
+  },
+  "version": 3
+}
