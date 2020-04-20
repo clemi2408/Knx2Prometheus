@@ -1,13 +1,13 @@
 # knxpush.sh - knxd to prometheus push gateway
 
 ## Preconditions
-This scipts needs some tools to run:
+This [script knxpush.sh](https://github.com/clemi2408/Knx2Prometheus/blob/master/knxpush.sh) needs some tools to run:
+
 * `xxd` to convert values: [manpage](https://linux.die.net/man/1/xxd)
 * `curl` to do http requests: [manpage](https://linux.die.net/man/1/curl)
 * `knxtool` as part of eibd/knxd project to listen to knx bus: [git](https://github.com/knxd/knxd/wiki/KnxTool)
 * `stdbuf` to capture the output of `knxtool` [manpage](https://linux.die.net/man/1/stdbuf)
 * `awk` to do String transformations and float calculations [manpage](https://linux.die.net/man/1/awk)
-
 
 ## Environment variables & defaults
 
@@ -27,10 +27,10 @@ This scipts needs some tools to run:
   * Values: `true` or `false`
   * Defaults to: `true`
 
-* `KNX_PUSH_GATEWAY_IP`
-  * Sets the ip of the knx ip gateway.
+* `KNX_PUSH_GATEWAY_HOST`
+  * Sets the ip or hostname of the knx ip gateway.
   * Value: valid ip or hostname.
-  * Defaults to: `172.29.1.120`
+  * Defaults to: `knx01`
 
 * `KNX_PUSH_KNXTOOL_PATH`
   * Sets the the path of the `knxtool` binary of the eibd.
@@ -38,9 +38,9 @@ This scipts needs some tools to run:
   * Defaults to: `/knx/bin/knxtool`
 
 * `KNX_PUSH_PUSHGATEWAY_HOST`
-  * Sets the the host of the prometheus push gateway.
+  * Sets the the ip or hostname of the prometheus push gateway.
   * Value: valid ip or hostname.
-  * Defaults to: `172.29.4.162`
+  * Defaults to: `knxpushgateway01`
 
 * `KNX_PUSH_PUSHGATEWAY_PORT`
   * Sets the the port of the prometheus push gateway host.
@@ -64,15 +64,26 @@ This scipts needs some tools to run:
   
 ## Configuration file (knx.csv)
 The configuration of the KNX items is based on csv.
+
 In the file the following items are set:
 * Group address (e.g `"1/0/40"`)
 * KNX-DPT (e.g `1`, `5` or `9`)
 * Description (e.g `"Kitchen light"`)
 
-Example:
+Note: During processing the `/` of a group address gets replaced with `_` to be compatible with URLs
 
+Example:
 ```
 "1/0/40",9,"Kitchen temperature"
 "2/0/3",1,"Kitchen light"
 "2/0/31",5,"Kitchen shutter"
 ```
+
+## docker-compose examples
+* [single](https://github.com/clemi2408/Knx2Prometheus/blob/master/docker-compose-single.yml)
+* [full](https://github.com/clemi2408/Knx2Prometheus/blob/master/docker-compose-full.yml)
+
+## Example Prometheus Queries (PromQL)
+* `knx_state{}` or `knx_state{job="knxpushgateway"}` lists all states 
+* `knx_state{groupaddress="0_0_14",job="knxpushgateway"}` lists the (last) state of the group address `0/0/14`
+
