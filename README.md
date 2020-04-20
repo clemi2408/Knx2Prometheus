@@ -27,10 +27,10 @@ This scipts needs some tools to run:
   * Values: `true` or `false`
   * Defaults to: `true`
 
-* `KNX_PUSH_GATEWAY_IP`
-  * Sets the ip of the knx ip gateway.
+* `KNX_PUSH_GATEWAY_HOST`
+  * Sets the ip or hostname of the knx ip gateway.
   * Value: valid ip or hostname.
-  * Defaults to: `172.29.1.120`
+  * Defaults to: `knx01`
 
 * `KNX_PUSH_KNXTOOL_PATH`
   * Sets the the path of the `knxtool` binary of the eibd.
@@ -38,9 +38,9 @@ This scipts needs some tools to run:
   * Defaults to: `/knx/bin/knxtool`
 
 * `KNX_PUSH_PUSHGATEWAY_HOST`
-  * Sets the the host of the prometheus push gateway.
+  * Sets the the ip or hostname of the prometheus push gateway.
   * Value: valid ip or hostname.
-  * Defaults to: `172.29.4.162`
+  * Defaults to: `knxpushgateway01`
 
 * `KNX_PUSH_PUSHGATEWAY_PORT`
   * Sets the the port of the prometheus push gateway host.
