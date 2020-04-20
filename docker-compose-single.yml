@@ -1,0 +1,42 @@
+version: '2.1'
+
+networks:
+  network_front:
+    external: true
+  back:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.29.1.0/24
+        
+services:
+  knxexporter01:
+    image: ubuntu
+    restart: always
+    hostname: knxexporter01
+    depends_on:
+      - knxpushgateway01
+      - knx01
+    environment:
+      - "KNX_PUSH_DEBUG=false"
+      - "KNX_PUSH_EXPORT=true"
+      - "KNX_PUSH_DEP_INSTALL=true"
+      - "KNX_PUSH_GATEWAY_IP=172.29.1.120"
+      - "KNX_PUSH_KNXTOOL_PATH=/knx/bin/knxtool"
+      - "KNX_PUSH_PUSHGATEWAY_HOST=172.29.4.162"
+      - "KNX_PUSH_PUSHGATEWAY_PORT=9091"
+      - "KNX_PUSH_PROMETHEUS_JOB=knxpushgateway"
+      - "KNX_PUSH_CONFIGFILE=/knx/config/knx.csv"
+      - "KNX_PUSH_UNCONFIGURED=false"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./data/knxexporter:/knx
+      - ./data/knxexporter/lib/libeibclient.so.0:/lib/libeibclient.so.0
+      - ./data/knxexporter/lib/libev.so.4:/lib/libev.so.4
+    working_dir: /knx
+    command: /bin/bash -c "/knx/knxpush.sh"
+    networks:
+      back:
+        ipv4_address: 172.29.1.125
+      network_front:
+        ipv4_address: 192.168.2.125
