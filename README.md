@@ -1,4 +1,6 @@
-# knxpush.sh - knxd to prometheus push gateway
+# knxpush.sh - knxd/eibd to prometheus push gateway
+## Example Grafana Dashboard
+![grafana example](https://github.com/clemi2408/Knx2Prometheus/blob/master/img_grafana_example.png "Example Grafana Dashboard")
 
 ## Preconditions
 This [script knxpush.sh](https://github.com/clemi2408/Knx2Prometheus/blob/master/knxpush.sh) needs some tools to run:
@@ -85,5 +87,7 @@ Example:
 
 ## Example Prometheus Queries (PromQL)
 * `knx_state{}` or `knx_state{job="knxpushgateway"}` lists all states 
-* `knx_state{groupaddress="0_0_14",job="knxpushgateway"}` lists the (last) state of the group address `0/0/14`
+![promql example_1](https://github.com/clemi2408/Knx2Prometheus/blob/master/img_promql_all_states.png "promql example1")
 
+* `knx_state{groupaddress="0_0_14",job="knxpushgateway"}` lists the (last) state of the group address `0/0/14`
+![promql example_2](https://github.com/clemi2408/Knx2Prometheus/blob/master/img_promql_single_state.png "promql example2")
