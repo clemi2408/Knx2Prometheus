@@ -100,7 +100,7 @@ services:
       - "KNX_PUSH_DEBUG=false"
       - "KNX_PUSH_EXPORT=true"
       - "KNX_PUSH_DEP_INSTALL=true"
-      - "KNX_PUSH_GATEWAY_IP=172.29.1.120"
+      - "KNX_PUSH_GATEWAY_IP=knx01"
       - "KNX_PUSH_KNXTOOL_PATH=/knx/bin/knxtool"
       - "KNX_PUSH_PUSHGATEWAY_HOST=knxpushgateway01"
       - "KNX_PUSH_PUSHGATEWAY_PORT=9091"
