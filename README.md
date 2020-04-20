@@ -1,13 +1,13 @@
 # knxpush.sh - knxd to prometheus push gateway
 
 ## Preconditions
-This scipts needs some tools to run:
+This [script knxpush.sh](https://github.com/clemi2408/Knx2Prometheus/blob/master/knxpush.sh) needs some tools to run:
+
 * `xxd` to convert values: [manpage](https://linux.die.net/man/1/xxd)
 * `curl` to do http requests: [manpage](https://linux.die.net/man/1/curl)
 * `knxtool` as part of eibd/knxd project to listen to knx bus: [git](https://github.com/knxd/knxd/wiki/KnxTool)
 * `stdbuf` to capture the output of `knxtool` [manpage](https://linux.die.net/man/1/stdbuf)
 * `awk` to do String transformations and float calculations [manpage](https://linux.die.net/man/1/awk)
-
 
 ## Environment variables & defaults
 
