@@ -64,6 +64,7 @@ This scipts needs some tools to run:
   
 ## Configuration file (knx.csv)
 The configuration of the KNX items is based on csv.
+Note: During Processing the `/` of a group address gets replaced with `_` to be compatible with URLs
 In the file the following items are set:
 * Group address (e.g `"1/0/40"`)
 * KNX-DPT (e.g `1`, `5` or `9`)
@@ -80,3 +81,8 @@ Example:
 ## docker-compose examples
 * [single](https://github.com/clemi2408/Knx2Prometheus/blob/master/docker-compose-single.yml)
 * [full](https://github.com/clemi2408/Knx2Prometheus/blob/master/docker-compose-full.yml)
+
+## Example Prometheus Queries (PromQL)
+* `knx_state{}` or `knx_state{job="knxpushgateway"}` lists all states 
+* `knx_state{groupaddress="0_0_14",job="knxpushgateway"}` lists the (last) state of the group address 0/0/14
+
