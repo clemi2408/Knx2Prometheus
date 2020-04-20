@@ -5,9 +5,9 @@
 defaultDebug=false
 defaultExport=true
 defaultInstallDependencies=true
-defaultKnxGatewayIp="172.29.1.120"
+defaultKnxGatewayHost="knx01"
 defaultKnxtoolLocation="/knx/bin/knxtool"
-defaultPushGatewayHost="172.29.4.162"
+defaultPushGatewayHost="knxpushgateway01"
 defaultPushGatewayPort=9091
 defaultPrometheusJob="knxpushgateway"
 defaultConfigFile="/knx/config/knx.csv"
@@ -47,12 +47,12 @@ readEnvVariables () {
 	fi  
 
 
-	if [ -z "$KNX_PUSH_GATEWAY_IP" ]; then
-		knxGatewayIp=$defaultKnxGatewayIp
-		echo "Configuration: Defaulting KNX_PUSH_GATEWAY_IP to '${defaultKnxGatewayIp}'"
+	if [ -z "$KNX_PUSH_GATEWAY_HOST" ]; then
+		knxGatewayHost=$defaultKnxGatewayHost
+		echo "Configuration: Defaulting KNX_PUSH_GATEWAY_HOST to '${defaultKnxGatewayHost}'"
 	else 
-		knxGatewayIp=$KNX_PUSH_GATEWAY_IP
-		echo "Configuration: Setting KNX_PUSH_GATEWAY_IP to '${KNX_PUSH_GATEWAY_IP}'"
+		knxGatewayHost=$KNX_PUSH_GATEWAY_HOST
+		echo "Configuration: Setting KNX_PUSH_GATEWAY_HOST to '${KNX_PUSH_GATEWAY_HOST}'"
 	fi  
 
 
@@ -204,7 +204,7 @@ pushToPrometheus () {
 
 process() {
 
-	command="stdbuf -i0 -o0 -e0 ${knxtoolPath} groupsocketlisten ip:${knxGatewayIp}"
+	command="stdbuf -i0 -o0 -e0 ${knxtoolPath} groupsocketlisten ip:${knxGatewayHost}"
 	capturePattern='^(.+) from (.+) to (.+): (\w.*)\s*$'
 
 
