@@ -64,14 +64,15 @@ This scipts needs some tools to run:
   
 ## Configuration file (knx.csv)
 The configuration of the KNX items is based on csv.
-Note: During Processing the `/` of a group address gets replaced with `_` to be compatible with URLs
+
 In the file the following items are set:
 * Group address (e.g `"1/0/40"`)
 * KNX-DPT (e.g `1`, `5` or `9`)
 * Description (e.g `"Kitchen light"`)
 
-Example:
+Note: During processing the `/` of a group address gets replaced with `_` to be compatible with URLs
 
+Example:
 ```
 "1/0/40",9,"Kitchen temperature"
 "2/0/3",1,"Kitchen light"
