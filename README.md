@@ -84,5 +84,5 @@ Example:
 
 ## Example Prometheus Queries (PromQL)
 * `knx_state{}` or `knx_state{job="knxpushgateway"}` lists all states 
-* `knx_state{groupaddress="0_0_14",job="knxpushgateway"}` lists the (last) state of the group address 0/0/14
+* `knx_state{groupaddress="0_0_14",job="knxpushgateway"}` lists the (last) state of the group address `0/0/14`
 
