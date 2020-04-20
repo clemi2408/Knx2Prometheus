@@ -2,6 +2,8 @@
 ## Example Grafana Dashboard
 ![grafana example](https://github.com/clemi2408/Knx2Prometheus/blob/master/img_grafana_dashboard_example.png "Example Grafana Dashboard")
 
+See example Dashboard ![here](https://github.com/clemi2408/Knx2Prometheus/blob/master/example_grafana_dashboard.json "Example Grafana Dashboard File")
+
 ## Preconditions
 This [script knxpush.sh](https://github.com/clemi2408/Knx2Prometheus/blob/master/knxpush.sh) needs some tools to run:
 
