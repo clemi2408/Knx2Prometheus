@@ -1,4 +1,4 @@
-# knxpush.sh - knxd to prometheus push gateway
+# knxpush.sh - knxd/eibd to prometheus push gateway
 ## Example Grafana Dashboard
 ![grafana example](https://github.com/clemi2408/Knx2Prometheus/blob/master/img_grafana_example.png "Example Grafana Dashboard")
 
