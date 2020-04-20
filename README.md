@@ -76,3 +76,7 @@ Example:
 "2/0/3",1,"Kitchen light"
 "2/0/31",5,"Kitchen shutter"
 ```
+
+## docker-compose examples
+* [single](https://github.com/clemi2408/Knx2Prometheus/blob/master/docker-compose-single.yml)
+* [full](https://github.com/clemi2408/Knx2Prometheus/blob/master/docker-compose-full.yml)
